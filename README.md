@@ -20,9 +20,9 @@ python app.py
 Information will be saved in file "names.csv" at the root folder.
 
 ## Credits
-[Work Sans](https://fonts.google.com/specimen/Work+Sans), by Wei Huang is used for the interface. 
-[Flask](http://flask.pocoo.org/docs/1.0/) is used as the server framework
-[jquery](https://api.jquery.com/category/ajax/)'s Ajax methods are used to handle the form on the client side.
+- [Work Sans](https://fonts.google.com/specimen/Work+Sans), by Wei Huang is used for the interface. 
+- [Flask](http://flask.pocoo.org/docs/1.0/) is used as the server framework
+- [jquery](https://api.jquery.com/category/ajax/)'s Ajax methods are used to handle the form on the client side.
 
 ## notes
 there are still some leftover files from previous versions awaiting cleanup.
