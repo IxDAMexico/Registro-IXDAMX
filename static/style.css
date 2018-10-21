@@ -1,0 +1,163 @@
+@font-face{
+  font-family: 'Work Sans';
+  src:url('./Work\ Sans/WorkSans-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'Work Sans';
+  src:url('./Work\ Sans/WorkSans-Thin.ttf');
+  font-weight: 100;
+  font-style: normal;
+}
+
+* {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 700;
+  line-height: 5.9vh;
+  font-size: 4.75vh;
+  transition-property: line-height, font-size, height;
+  transition-timing-function: easy-ease;
+  transition-duration: 0.3s;
+}
+
+span {
+  font-weight: 100;
+}
+
+body {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-rows: 76.11vh 5.9vh 100%;
+  overflow: hidden;
+}
+
+#body {
+  min-width: 100vw;
+  display: grid;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.nombre {
+  height: 5.9vh;
+  font-size: 4.75vh;
+  text-transform: capitalize;
+  overflow: hidden;
+  padding-left: 20px;
+  font-weight: 700;
+  overflow-x: hidden;
+}
+.nombre:nth-child(even) {
+  color: #0063FF;
+}
+
+.ampersand {
+  height: 5.9vh;
+  font-size: 4.75vh;
+  text-transform: capitalize;
+  font-weight: 100;
+  text-align: center;
+}
+.ampersand:nth-child(even) {
+  color: #0063FF;
+}
+
+.bottom {
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.header {
+  min-height: 11.8vh;
+  max-height: 17.7vh;
+  font-size: 4.75vh;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+input {
+  font-size: 4.75vh;
+  font-weight: 700;
+  border-bottom: 4px solid #0063FF;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid #0063FF;
+  overflow: hidden;
+  padding-left: 20px;
+  text-align: left;
+}
+input::placeholder {
+  font-weight: 100;
+  opacity: 0.5;
+  color: #515E66;
+}
+
+.input {
+  color: #515E66;
+}
+
+.input02 {
+  color: #0063FF;
+}
+
+.ixda {
+  background: #0063FF;
+  color: white;
+}
+
+input[type=submit] {
+  width: 100%;
+  overflow-y: hidden;
+  height: 5.9vh;
+  font-size: 4.75vh;
+  color: #0063FF;
+  background: none;
+  transition-property: background, height, opacity, color;
+  transition-duration: 0.4s, 0.4s;
+  transition-timing-function: ease-in;
+  opacity: 1;
+}
+input[type=submit]:hover {
+  background: #0063FF;
+  color: #D8D8D8;
+}
+input[type=submit].hidden {
+  height: 0px;
+  opacity: 0;
+}
+
+.top-right {
+  position: absolute;
+  right: 30px;
+  top: -1vh;
+}
+.top-right > img {
+  height: 1.9666666667vh;
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.marquee div {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 25s steps(100) infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

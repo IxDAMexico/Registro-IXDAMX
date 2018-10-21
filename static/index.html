@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Registro IXDA Interaction Talks 02</title>
+</head>
+<body >
+<div id="body">
+    <div  id="principal" class = "vertical-grid">
+        <div class="nombre"><span>& </span>Alex </div>
+        <div class="nombre"><span>& </span>Mariana  </div>
+        <div class="nombre"><span>& </span>André </div>
+        <div class="nombre"><span>& </span>Frida </div>
+        <div class="nombre"><span>& </span>Noé </div>
+        <div class="nombre"><span>& </span>Edgar </div>
+    </div>
+    <div  id="lateral">
+
+    </div>
+</div>
+<div class="ixda">
+    <div>   <span>@</span>IxTalks02</div>
+     
+</div>
+<div class="bottom">
+        <form class="header" id="capture"  autocomplete="off" >
+            <input type="text" name="name" placeholder ="Tu nombre" id="nombre" class="input" required >
+            <input type="email" name="email" placeholder="Tu correo"  class = "hidable hidden" id="correo" oninput="buttonShow()" class = "input02" required>
+            <input type="submit" value="Enviar" class="hidden" id='enviar'>
+        </form>
+  
+</div>
+<div class="top-right"><img src="./img/IXDAmexico.png" alt="IXDAmexico">
+</div>
+</body>
+
+<script src="./jquery.min.js"></script>
+<script>
+
+//este codigo, repetido, logra el effecto que buscamos. Solo hace falta ver como agregar más elementos a la lista
+var main = document.getElementById('principal');
+
+var animator = function(){
+    var test01 = main.firstElementChild;
+    main.appendChild(test01);
+}
+setInterval(animator, 1000);
+var getname = function (){
+    var name = document.getElementById('nombre').value;
+}
+var buttonShow = function () {
+    document.getElementById('enviar').classList.remove('hidden');
+}
+var buttonHide = function() {
+    document.getElementById('enviar').classList.add('hidden');
+}
+var resetForm = function(){
+    //Create span at start
+    
+    var span = document.createElement('span');
+    span.appendChild(document.createTextNode('& '));
+
+        
+    //create name element with value
+    var nombre = document.createTextNode(document.getElementById('nombre').value);
+    // console.log(nombre);
+    var domElement = document.createElement('div');
+    domElement.classList.add('nombre');
+    //Append both elements here
+    domElement.appendChild(span);
+    domElement.appendChild(nombre);
+    /// aqui va el codigo sobrante
+
+
+
+    //append dom element to list
+    main.appendChild(domElement);
+
+    //reset questionaries
+    document.getElementById('enviar').classList.add('hidden');
+    document.getElementById('capture').reset();
+    document.getElementById('nombre').focus();
+}
+
+$( "#capture" ).on( "submit", function( event ) {
+  event.preventDefault();
+  console.log( $( this ).serialize() );
+  var url = "./form-receive";
+  $.ajax({
+           type: "POST",
+           url: url,
+           data: $(this).serialize(), // serializes the form's elements.
+           success: function(data)
+           {
+               console.log(data); // show response from the php script.
+           }
+         });
+    resetForm();
+});
+</script>
+</html>
