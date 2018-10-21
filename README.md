@@ -1,9 +1,8 @@
 # Registro-IXDAMX
 
-Simple Flask web application to help with the on-site e-mail capture of atendees.
+Simple Flask web application to help with on-event e-mail capture.
 
 ## Usage
-to run simply use 
 
 ```bash
 python app.py
